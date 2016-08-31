@@ -15,6 +15,8 @@
 		B657DA421D49BC9B00B2E63F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B657DA401D49BC9B00B2E63F /* LaunchScreen.storyboard */; };
 		B657DA4D1D49BC9B00B2E63F /* drawTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B657DA4C1D49BC9B00B2E63F /* drawTests.m */; };
 		B657DA581D49BC9B00B2E63F /* drawUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B657DA571D49BC9B00B2E63F /* drawUITests.m */; };
+		B68625551D76C26600D85321 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = B68625541D76C26600D85321 /* DrawView.m */; };
+		B68625571D76D20300D85321 /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B68625561D76D20300D85321 /* dog.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		B657DA531D49BC9B00B2E63F /* drawUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = drawUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B657DA571D49BC9B00B2E63F /* drawUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = drawUITests.m; sourceTree = "<group>"; };
 		B657DA591D49BC9B00B2E63F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B68625531D76C26600D85321 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
+		B68625541D76C26600D85321 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
+		B68625561D76D20300D85321 /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +106,13 @@
 		B657DA311D49BC9B00B2E63F /* draw */ = {
 			isa = PBXGroup;
 			children = (
+				B68625561D76D20300D85321 /* dog.jpg */,
 				B657DA351D49BC9B00B2E63F /* AppDelegate.h */,
 				B657DA361D49BC9B00B2E63F /* AppDelegate.m */,
 				B657DA381D49BC9B00B2E63F /* ViewController.h */,
 				B657DA391D49BC9B00B2E63F /* ViewController.m */,
+				B68625531D76C26600D85321 /* DrawView.h */,
+				B68625541D76C26600D85321 /* DrawView.m */,
 				B657DA3B1D49BC9B00B2E63F /* Main.storyboard */,
 				B657DA3E1D49BC9B00B2E63F /* Assets.xcassets */,
 				B657DA401D49BC9B00B2E63F /* LaunchScreen.storyboard */,
@@ -246,6 +254,7 @@
 				B657DA421D49BC9B00B2E63F /* LaunchScreen.storyboard in Resources */,
 				B657DA3F1D49BC9B00B2E63F /* Assets.xcassets in Resources */,
 				B657DA3D1D49BC9B00B2E63F /* Main.storyboard in Resources */,
+				B68625571D76D20300D85321 /* dog.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +281,7 @@
 			files = (
 				B657DA3A1D49BC9B00B2E63F /* ViewController.m in Sources */,
 				B657DA371D49BC9B00B2E63F /* AppDelegate.m in Sources */,
+				B68625551D76C26600D85321 /* DrawView.m in Sources */,
 				B657DA341D49BC9B00B2E63F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +508,7 @@
 				B657DA5E1D49BC9B00B2E63F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B657DA5F1D49BC9B00B2E63F /* Build configuration list for PBXNativeTarget "drawTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +517,7 @@
 				B657DA611D49BC9B00B2E63F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B657DA621D49BC9B00B2E63F /* Build configuration list for PBXNativeTarget "drawUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +526,7 @@
 				B657DA641D49BC9B00B2E63F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
