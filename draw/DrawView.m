@@ -28,9 +28,9 @@
     CGContextSetLineJoin(ctx, kCGLineJoinRound);
     /**
      *  typedef CF_ENUM(int32_t, CGLineJoin) {
-         kCGLineJoinMiter,
-         kCGLineJoinRound,
-         kCGLineJoinBevel
+            kCGLineJoinMiter, //尖的，斜接
+            kCGLineJoinRound, //圆
+            kCGLineJoinBevel //斜面
      };
      */
     CGContextSetLineCap(ctx, kCGLineCapRound);
@@ -128,10 +128,9 @@
 
 //画圆、圆弧
 -(void)drawCircle:(CGContextRef)ctx{
-    
     CGContextSetStrokeColorWithColor(ctx, [UIColor purpleColor].CGColor);
-    
-    /* 绘制路径 方法一
+    /**
+     *  绘制路径方法一
      void CGContextAddArc (
      CGContextRef c,
      CGFloat x,             //圆心的x坐标
@@ -144,65 +143,34 @@
      */
     
     //圆
-    CGContextAddArc (ctx, 100, 100, 50, 0, M_PI* 2 , 0);
+    CGContextAddArc(ctx, 150, 200, 50, 0, M_PI*2, 0);
     CGContextStrokePath(ctx);
-    
     //半圆
-    CGContextAddArc (ctx, 100, 200, 50, 0, M_PI*2, 0);
+    CGContextAddArc(ctx, 260, 200, 50, 0, M_PI, 0);
     CGContextStrokePath(ctx);
     
-    //绘制路径 方法二，这方法适合绘制弧度 ，端点p1和p2是弧线的控制点，类似photeshop中钢笔工具控制曲线，还不明白请去了解贝塞尔曲线
-    //    void CGContextAddArcToPoint(
-    //                                CGContextRef c,
-    //                                CGFloat x1,  //端点1的x坐标
-    //                                CGFloat y1,  //端点1的y坐标
-    //                                CGFloat x2,  //端点2的x坐标
-    //                                CGFloat y2,  //端点2的y坐标
-    //                                CGFloat radius //半径
-    //                                )；
+    /**
+     *  绘制路径方法二，这个方法适合绘制弧度，端点p1和p2是弧度的控制点，类似ps中的钢笔工具控制曲线（贝塞尔曲线）
+     void CGContextAddArcToPoint(
+     //                                CGContextRef c,
+     //                                CGFloat x1,  //端点1的x坐标
+     //                                CGFloat y1,  //端点1的y坐标
+     //                                CGFloat x2,  //端点2的x坐标
+     //                                CGFloat y2,  //端点2的y坐标
+     //                                CGFloat radius //半径
+     //                                )；
+     */
     
     //1/4弧度 * 4
     CGContextMoveToPoint(ctx, 200, 200);
-    CGContextAddArcToPoint(ctx, 200, 100,300, 100, 100);
-    CGContextAddArcToPoint(ctx, 400, 100,400, 200, 100);
+    CGContextAddArc(ctx, 200, 100, 300, 100, 100, 100);
+    CGContextAddArcToPoint(ctx, 400, 100, 400, 200, 100);
+    CGContextAddArcToPoint(ctx, 400, 300, 300, 300, 100);
     CGContextAddArcToPoint(ctx, 400, 300,300, 300, 100);
     CGContextAddArcToPoint(ctx, 200, 300,200, 200, 100);
     CGContextStrokePath(ctx);
     
     //贝塞尔曲线
-    CGContextSetStrokeColorWithColor(ctx, [UIColor orangeColor].CGColor);
-    
-    //三次曲线函数
-    //void CGContextAddCurveToPoint (
-    //                               CGContextRef c,
-    //                               CGFloat cp1x, //控制点1 x坐标
-    //                               CGFloat cp1y, //控制点1 y坐标
-    //                               CGFloat cp2x, //控制点2 x坐标
-    //                               CGFloat cp2y, //控制点2 y坐标
-    //                               CGFloat x,  //直线的终点 x坐标
-    //                               CGFloat y  //直线的终点 y坐标
-    //                               );
-    
-    CGContextMoveToPoint(ctx, 200, 200);
-    CGContextAddCurveToPoint(ctx, 200, 0, 300, 200, 400, 100);
-    CGContextStrokePath(ctx);
-    
-    //三次曲线可以画圆弧，比如这里画一条之前用CGContextAddArcToPoint构成的圆弧
-    CGContextMoveToPoint(ctx, 200, 200);
-    CGContextAddCurveToPoint(ctx, 200, 100, 300, 100, 300 ,100);
-    CGContextStrokePath(ctx);
-    //二次曲线函数
-    //void CGContextAddQuadCurveToPoint (
-    //                                   CGContextRef c,
-    //                                   CGFloat cpx,  //控制点 x坐标
-    //                                   CGFloat cpy,  //控制点 y坐标
-    //                                   CGFloat x,  //直线的终点 x坐标
-    //                                   CGFloat y  //直线的终点 y坐标
-    //                                   );
-    
-    CGContextMoveToPoint(ctx, 100, 100);
-    CGContextAddQuadCurveToPoint(ctx, 200, 0, 300, 150);
-    CGContextStrokePath(ctx);
     
 }
 
